@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 얼렁뚱땅 코딩저장소
+title: 얼렁뚱땅 코드 저장소
 permalink: /
 ---
 
