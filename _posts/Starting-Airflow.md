@@ -42,6 +42,12 @@ mkdir -p ~/vol_airflow/dags
 ~~~
 
 #### Step 2
+파이썬을 이용하여 DAG를 정의한다
+~~~sh
+vi test_dag.py
+~~~
+
+#### Step 3
 ~~~sh
 docker run -it -p 18080:8080 \
 -v ~/vol_airflow/dags/test_dag.py:/opt/airflow/dags/test_dag.py \
