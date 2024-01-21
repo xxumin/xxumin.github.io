@@ -69,5 +69,5 @@ airflow scheduler \
 '
 ~~~
 
-#### Step3
+#### Step 4
   * 인터넷 브라우저에 http://localhost:18080 로 접속 후 로그인하여 웹 인터페이스를 확인
