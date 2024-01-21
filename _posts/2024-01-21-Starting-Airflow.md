@@ -7,18 +7,18 @@
   2. 워커: 예약된 태스크를 선택하고 실행
   3. 웹 서버: 스케줄러에서 분석한 DAG를 시각화하고 DAG 실행과 결과를 확인할 수 있는 인터페이스 제공
 
-  #### * DAG(Directed Acyclic Graph)
+  ##### DAG(Directed Acyclic Graph)
   - 방향성 비순환 그래프는 의존성을 가진다
   - **오퍼레이터** 집합에 대한 실행을 **오케스트레이션**하는 역할을 한다
 
-  #### * Task
+  ##### Task
   - 작업의 올바른 실행을 보장하기 위한 오퍼레이터의 Wrapper 또는 Manager
   - 태스크는 오퍼레이터의 상태를 관리하고 사용자에게 상태 변경을 표시하는 에어플로우의 내장 컴포턴트
 
-  #### * Operator
+  ##### Operator
   - 단일 작업을 수행할 수 있는 기능을 제공
   - **BaseOperator**로부터 상속된 PythonOperator, EmailOperator와 같은 다양한 서브클래스를 제공
-  
+
 ## 에어플로우가 선택시 고려해야할 점
   #### * 에어플로우를 선택하는 이유  
   1. 오픈 소스이기 때문에 특정 벤더에 종속되지 않고 에어플로우를 사용할 수 있다
@@ -37,21 +37,21 @@
 
 ## 에어플로우 실행하기
 #### Step 1
-~~~sh
+~~~bash
 mkdir -p ~/vol_airflow/dags
 ~~~
 
 #### Step 2
 파이썬을 이용하여 DAG를 정의한다
-~~~sh
+~~~bash
 vi test_dag.py
 ~~~
 
 #### Step 3
-~~~sh
+~~~bash
 docker run -it -p 18080:8080 \
 -v ~/vol_airflow/dags/test_dag.py:/opt/airflow/dags/test_dag.py \
---entrypoint="/bin/sh" \
+--entrypoint=/bin/sh \
 --name airflow \
 apache/airflow:2.0.0-python3.8 \
 -c '( \
